@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SILENT LEARNERS</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Accessibility Controls -->
+    <div class="accessibility-controls">
+        <button class="access-btn" onclick="toggleHighContrast()">
+            <i class="fas fa-adjust"></i> High Contrast
+        </button>
+        <button class="access-btn" onclick="toggleTextSize()">
+            <i class="fas fa-text-height"></i> Text Size
+        </button>
+        <button class="access-btn" onclick="toggleCaptions()">
+            <i class="fas fa-closed-captioning"></i> Captions
+        </button>
+        <button class="access-btn" onclick="toggleSignGuide()">
+            <i class="fas fa-hand"></i> Sign Guide
+        </button>
+        <button class="access-btn" onclick="toggleNotepad()">
+            <i class="fas fa-sticky-note"></i> Notepad
+        </button>
+    </div>
+
+    <!-- Notepad Window -->
+    <div class="notepad-container" id="notepadContainer">
+        <div class="notepad-header">
+            <h3>Quick Notes</h3>
+            <div class="notepad-controls">
+                <button class="notepad-btn" onclick="saveNote()">
+                    <i class="fas fa-save"></i>
+                </button>
+                <button class="notepad-btn" onclick="clearNote()">
+                    <i class="fas fa-trash"></i>
+                </button>
+                <button class="notepad-btn" onclick="toggleNotepad()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+        </div>
+        <div class="notepad-content">
+            <textarea id="notepadText" placeholder="Start typing your notes here..."></textarea>
+        </div>
+    </div>
+
+    <nav class="navbar">
+        <div class="logo">
+            <h1>SILENT LEARNERS</h1>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#learning">Learning</a></li>
+            <li><a href="#converter">Converter</a></li>
+            <li><a href="#communication">Communication</a></li>
+            <li><a href="#dashboard">Dashboard</a></li>
+            <li><a href="#resources">Resources</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <!-- Home Section -->
+        <section id="home" class="hero-section">
+            <div class="hero-content">
+                <h1>Empowering Deaf and Mute Students</h1>
+                <p>A comprehensive platform for learning, communication, and assessment</p>
+                <div class="quick-actions">
+                    <button class="btn" onclick="startEmergencyAlert()">
+                        <i class="fas fa-exclamation-triangle"></i> Emergency Alert
+                    </button>
+                    <button class="btn" onclick="startVisualAlert()">
+                        <i class="fas fa-bell"></i> Visual Alert
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Learning Modules Section -->
+        <section id="learning" class="section">
+            <h2>Learning Modules</h2>
+            <div class="modules-grid">
+                <div class="module-card">
+                    <i class="fas fa-language"></i>
+                    <h3>Sign Language</h3>
+                    <p>Master American Sign Language (ASL) with interactive lessons and practice sessions.</p>
+                    <div class="module-features">
+                        <span><i class="fas fa-video"></i> Video Lessons</span>
+                        <span><i class="fas fa-tasks"></i> Practice Exercises</span>
+                        <span><i class="fas fa-certificate"></i> Certification</span>
+                    </div>
+                    <button class="btn">Start Learning</button>
+                </div>
+
+                <div class="module-card">
+                    <i class="fas fa-calculator"></i>
+                    <h3>Mathematics</h3>
+                    <p>Visual mathematics lessons with sign language explanations and interactive problems.</p>
+                    <div class="module-features">
+                        <span><i class="fas fa-square-root-alt"></i> Algebra</span>
+                        <span><i class="fas fa-shapes"></i> Geometry</span>
+                        <span><i class="fas fa-chart-line"></i> Statistics</span>
+                    </div>
+                    <a href="subjects/mathematics.html" class="btn">Start Learning</a>
+                </div>
+
+                <div class="module-card">
+                    <i class="fas fa-flask"></i>
+                    <h3>Science</h3>
+                    <p>Interactive science experiments and concepts explained through sign language.</p>
+                    <div class="module-features">
+                        <span><i class="fas fa-atom"></i> Physics</span>
+                        <span><i class="fas fa-vial"></i> Chemistry</span>
+                        <span><i class="fas fa-dna"></i> Biology</span>
+                    </div>
+                    <a href="subjects/science.html" class="btn">Start Learning</a>
+                </div>
+
+                <div class="module-card">
+                    <i class="fas fa-globe"></i>
+                    <h3>English Language</h3>
+                    <p>English language learning with visual aids and sign language support.</p>
+                    <div class="module-features">
+                        <span><i class="fas fa-book-reader"></i> Reading</span>
+                        <span><i class="fas fa-pen"></i> Writing</span>
+                        <span><i class="fas fa-comments"></i> Communication</span>
+                    </div>
+                    <button class="btn">Start Learning</button>
+                </div>
+
+                <div class="module-card">
+                    <i class="fas fa-history"></i>
+                    <h3>History & Social Studies</h3>
+                    <p>Explore history and social studies through visual timelines and interactive maps.</p>
+                    <div class="module-features">
+                        <span><i class="fas fa-map-marked-alt"></i> Geography</span>
+                        <span><i class="fas fa-clock"></i> Timeline Events</span>
+                        <span><i class="fas fa-users"></i> Social Studies</span>
+                    </div>
+                    <button class="btn">Start Learning</button>
+                </div>
+
+                <div class="module-card">
+                    <i class="fas fa-palette"></i>
+                    <h3>Art & Design</h3>
+                    <p>Creative arts and design courses with visual demonstrations and hands-on projects.</p>
+                    <div class="module-features">
+                        <span><i class="fas fa-paint-brush"></i> Drawing</span>
+                        <span><i class="fas fa-pencil-ruler"></i> Design</span>
+                        <span><i class="fas fa-camera"></i> Photography</span>
+                    </div>
+                    <button class="btn">Start Learning</button>
+                </div>
+
+                <div class="module-card">
+                    <i class="fas fa-music"></i>
+                    <h3>Music & Rhythm</h3>
+                    <p>Learn music through visual patterns, vibrations, and rhythm exercises.</p>
+                    <div class="module-features">
+                        <span><i class="fas fa-drum"></i> Rhythm</span>
+                        <span><i class="fas fa-wave-square"></i> Visual Music</span>
+                        <span><i class="fas fa-guitar"></i> Instruments</span>
+                    </div>
+                    <button class="btn">Start Learning</button>
+                </div>
+
+                <div class="module-card">
+                    <i class="fas fa-code"></i>
+                    <h3>Computer Science</h3>
+                    <p>Programming and computer science concepts with visual coding environments.</p>
+                    <div class="module-features">
+                        <span><i class="fas fa-code"></i> Programming</span>
+                        <span><i class="fas fa-laptop-code"></i> Web Development</span>
+                        <span><i class="fas fa-robot"></i> AI Basics</span>
+                    </div>
+                    <button class="btn">Start Learning</button>
+                </div>
+
+                <div class="module-card">
+                    <i class="fas fa-heart"></i>
+                    <h3>Life Skills</h3>
+                    <p>Essential life skills training with visual demonstrations and practical exercises.</p>
+                    <div class="module-features">
+                        <span><i class="fas fa-utensils"></i> Cooking</span>
+                        <span><i class="fas fa-hand-holding-usd"></i> Finance</span>
+                        <span><i class="fas fa-tasks"></i> Daily Living</span>
+                    </div>
+                    <button class="btn">Start Learning</button>
+                </div>
+
+                <div class="module-card">
+                    <i class="fas fa-dumbbell"></i>
+                    <h3>Physical Education</h3>
+                    <p>Fitness and sports activities with visual demonstrations and adapted exercises.</p>
+                    <div class="module-features">
+                        <span><i class="fas fa-running"></i> Sports</span>
+                        <span><i class="fas fa-heartbeat"></i> Fitness</span>
+                        <span><i class="fas fa-gamepad"></i> Games</span>
+                    </div>
+                    <button class="btn">Start Learning</button>
+                </div>
+
+                <div class="module-card">
+                    <i class="fas fa-seedling"></i>
+                    <h3>Environmental Science</h3>
+                    <p>Learn about nature and environment through interactive visual experiences.</p>
+                    <div class="module-features">
+                        <span><i class="fas fa-leaf"></i> Nature</span>
+                        <span><i class="fas fa-recycle"></i> Sustainability</span>
+                        <span><i class="fas fa-tree"></i> Ecosystems</span>
+                    </div>
+                    <button class="btn">Start Learning</button>
+                </div>
+
+                <div class="module-card">
+                    <i class="fas fa-brain"></i>
+                    <h3>Critical Thinking</h3>
+                    <p>Develop problem-solving and analytical skills through visual puzzles and exercises.</p>
+                    <div class="module-features">
+                        <span><i class="fas fa-puzzle-piece"></i> Logic</span>
+                        <span><i class="fas fa-lightbulb"></i> Creativity</span>
+                        <span><i class="fas fa-chart-bar"></i> Analysis</span>
+                    </div>
+                    <button class="btn">Start Learning</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sign Language Converter Section -->
+        <section id="converter" class="section">
+            <h2>Sign Language Converter</h2>
+            <div class="converter-container">
+                <div class="converter-box">
+                    <div class="converter-header">
+                        <i class="fas fa-keyboard"></i>
+                        <h3>Text to Sign Language</h3>
+                    </div>
+                    <div class="converter-content">
+                        <div class="input-group">
+                            <label for="textInput">Enter Text</label>
+                            <textarea id="textInput" placeholder="Type or paste your text here..."></textarea>
+                        </div>
+                        <div class="input-group">
+                            <label for="signLanguage">Select Sign Language</label>
+                            <select id="signLanguage">
+                                <option value="ASL">American Sign Language (ASL)</option>
+                                <option value="BSL">British Sign Language (BSL)</option>
+                                <option value="ISL">Indian Sign Language (ISL)</option>
+                            </select>
+                        </div>
+                        <div class="converter-options">
+                            <label class="option-toggle">
+                                <input type="checkbox" id="showFingerspelling">
+                                <span class="toggle-label">Show Fingerspelling</span>
+                            </label>
+                            <label class="option-toggle">
+                                <input type="checkbox" id="showNumbers">
+                                <span class="toggle-label">Show Numbers</span>
+                            </label>
+                        </div>
+                        <button class="btn convert-btn" onclick="convertTextToSign()">
+                            <i class="fas fa-exchange-alt"></i> Convert to Sign
+                        </button>
+                    </div>
+                    <div class="converter-preview">
+                        <h4>Preview</h4>
+                        <div class="preview-window">
+                            <div class="avatar-placeholder">
+                                <i class="fas fa-user-circle"></i>
+                            </div>
+                            <div class="sign-preview"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="converter-box">
+                    <div class="converter-header">
+                        <i class="fas fa-microphone"></i>
+                        <h3>Speech to Sign Language</h3>
+                    </div>
+                    <div class="converter-content">
+                        <div class="recording-controls">
+                            <button class="btn record-btn" id="startRecording">
+                                <i class="fas fa-microphone"></i> Start Recording
+                            </button>
+                            <div class="recording-status">
+                                <div class="status-indicator"></div>
+                                <span class="status-text">Ready to record</span>
+                            </div>
+                        </div>
+                        <div class="visual-feedback">
+                            <div class="sound-wave"></div>
+                            <div class="sound-wave"></div>
+                            <div class="sound-wave"></div>
+                        </div>
+                        <div class="recording-preview">
+                            <h4>Last Recording</h4>
+                            <div class="preview-window">
+                                <div class="avatar-placeholder">
+                                    <i class="fas fa-user-circle"></i>
+                                </div>
+                                <div class="sign-preview"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="converter-box">
+                    <div class="converter-header">
+                        <i class="fas fa-camera"></i>
+                        <h3>Sign Language to Text</h3>
+                    </div>
+                    <div class="converter-content">
+                        <div class="camera-container">
+                            <video id="webcam" autoplay playsinline></video>
+                            <div class="camera-overlay">
+                                <div class="detection-box"></div>
+                            </div>
+                        </div>
+                        <div class="recognition-status">
+                            <div class="status-indicator"></div>
+                            <span class="status-text">Ready to recognize signs</span>
+                        </div>
+                        <button class="btn recognize-btn" onclick="startSignRecognition()">
+                            <i class="fas fa-hand"></i> Start Recognition
+                        </button>
+                        <div class="recognition-preview">
+                            <h4>Recognized Text</h4>
+                            <div class="preview-window">
+                                <div class="text-preview"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Communication Assistant Section -->
+        <section id="communication" class="section">
+            <h2>Communication Assistant</h2>
+            <div class="communication-container">
+                <div class="video-call">
+                    <video id="localVideo" autoplay playsinline muted></video>
+                    <video id="remoteVideo" autoplay playsinline></video>
+                    <div class="controls">
+                        <button class="btn" id="startCall">Start Call</button>
+                        <button class="btn" id="endCall">End Call</button>
+                        <button class="btn" id="toggleCaptions">Toggle Captions</button>
+                    </div>
+                    <div class="captions-box">
+                        <p id="liveCaptions">Captions will appear here...</p>
+                    </div>
+                </div>
+                <div class="chat-box">
+                    <div class="chat-options">
+                        <button class="chat-option active" data-mode="text">Text</button>
+                        <button class="chat-option" data-mode="sign">Sign Language</button>
+                        <button class="chat-option" data-mode="draw">Draw</button>
+                    </div>
+                    <div id="chatMessages" class="chat-messages"></div>
+                    <div class="chat-input">
+                        <input type="text" id="messageInput" placeholder="Type your message...">
+                        <button class="btn" onclick="sendMessage()">Send</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Resources Section -->
+        <section id="resources" class="section">
+            <h2>Learning Resources</h2>
+            <div class="resources-grid">
+                <!-- Sign Language Resources -->
+                <div class="resource-card">
+                    <i class="fas fa-language"></i>
+                    <h3>Sign Language Resources</h3>
+                    <ul class="resource-list">
+                        <li><i class="fas fa-book"></i> ASL Dictionary with 10,000+ signs</li>
+                        <li><i class="fas fa-video"></i> Video tutorials for all skill levels</li>
+                        <li><i class="fas fa-users"></i> Practice groups and workshops</li>
+                        <li><i class="fas fa-certificate"></i> Certification programs</li>
+                    </ul>
+                    <button class="btn">Access Resources</button>
+                </div>
+
+                <!-- Mathematics Resources -->
+                <div class="resource-card">
+                    <i class="fas fa-calculator"></i>
+                    <h3>Mathematics Resources</h3>
+                    <ul class="resource-list">
+                        <li><i class="fas fa-square-root-alt"></i> Visual algebra tutorials</li>
+                        <li><i class="fas fa-shapes"></i> Interactive geometry tools</li>
+                        <li><i class="fas fa-chart-line"></i> Statistics practice problems</li>
+                        <li><i class="fas fa-calculator"></i> Math problem-solving guides</li>
+                    </ul>
+                    <button class="btn">Access Resources</button>
+                </div>
+
+                <!-- Science Resources -->
+                <div class="resource-card">
+                    <i class="fas fa-flask"></i>
+                    <h3>Science Resources</h3>
+                    <ul class="resource-list">
+                        <li><i class="fas fa-atom"></i> Virtual physics labs</li>
+                        <li><i class="fas fa-vial"></i> Chemistry experiment videos</li>
+                        <li><i class="fas fa-dna"></i> Biology visual guides</li>
+                        <li><i class="fas fa-microscope"></i> Interactive science simulations</li>
+                    </ul>
+                    <button class="btn">Access Resources</button>
+                </div>
+
+                <!-- English Language Resources -->
+                <div class="resource-card">
+                    <i class="fas fa-globe"></i>
+                    <h3>English Language Resources</h3>
+                    <ul class="resource-list">
+                        <li><i class="fas fa-book-reader"></i> Visual reading materials</li>
+                        <li><i class="fas fa-pen"></i> Writing practice exercises</li>
+                        <li><i class="fas fa-comments"></i> Communication practice tools</li>
+                        <li><i class="fas fa-book"></i> Grammar visual guides</li>
+                    </ul>
+                    <button class="btn">Access Resources</button>
+                </div>
+
+                <!-- History & Social Studies Resources -->
+                <div class="resource-card">
+                    <i class="fas fa-history"></i>
+                    <h3>History & Social Studies Resources</h3>
+                    <ul class="resource-list">
+                        <li><i class="fas fa-map-marked-alt"></i> Interactive historical maps</li>
+                        <li><i class="fas fa-clock"></i> Timeline visualization tools</li>
+                        <li><i class="fas fa-users"></i> Cultural study materials</li>
+                        <li><i class="fas fa-book"></i> Historical document archives</li>
+                    </ul>
+                    <button class="btn">Access Resources</button>
+                </div>
+
+                <!-- Art & Design Resources -->
+                <div class="resource-card">
+                    <i class="fas fa-palette"></i>
+                    <h3>Art & Design Resources</h3>
+                    <ul class="resource-list">
+                        <li><i class="fas fa-paint-brush"></i> Drawing technique guides</li>
+                        <li><i class="fas fa-pencil-ruler"></i> Design principle tutorials</li>
+                        <li><i class="fas fa-camera"></i> Photography basics</li>
+                        <li><i class="fas fa-palette"></i> Color theory resources</li>
+                    </ul>
+                    <button class="btn">Access Resources</button>
+                </div>
+
+                <!-- Music & Rhythm Resources -->
+                <div class="resource-card">
+                    <i class="fas fa-music"></i>
+                    <h3>Music & Rhythm Resources</h3>
+                    <ul class="resource-list">
+                        <li><i class="fas fa-drum"></i> Rhythm training exercises</li>
+                        <li><i class="fas fa-wave-square"></i> Visual music notation</li>
+                        <li><i class="fas fa-guitar"></i> Instrument tutorials</li>
+                        <li><i class="fas fa-music"></i> Music theory guides</li>
+                    </ul>
+                    <button class="btn">Access Resources</button>
+                </div>
+
+                <!-- Computer Science Resources -->
+                <div class="resource-card">
+                    <i class="fas fa-code"></i>
+                    <h3>Computer Science Resources</h3>
+                    <ul class="resource-list">
+                        <li><i class="fas fa-code"></i> Visual programming tutorials</li>
+                        <li><i class="fas fa-laptop-code"></i> Web development guides</li>
+                        <li><i class="fas fa-robot"></i> AI learning materials</li>
+                        <li><i class="fas fa-keyboard"></i> Coding practice platforms</li>
+                    </ul>
+                    <button class="btn">Access Resources</button>
+                </div>
+
+                <!-- Life Skills Resources -->
+                <div class="resource-card">
+                    <i class="fas fa-heart"></i>
+                    <h3>Life Skills Resources</h3>
+                    <ul class="resource-list">
+                        <li><i class="fas fa-utensils"></i> Cooking tutorials</li>
+                        <li><i class="fas fa-hand-holding-usd"></i> Financial literacy guides</li>
+                        <li><i class="fas fa-tasks"></i> Daily living skills</li>
+                        <li><i class="fas fa-home"></i> Home management guides</li>
+                    </ul>
+                    <button class="btn">Access Resources</button>
+                </div>
+
+                <!-- Physical Education Resources -->
+                <div class="resource-card">
+                    <i class="fas fa-dumbbell"></i>
+                    <h3>Physical Education Resources</h3>
+                    <ul class="resource-list">
+                        <li><i class="fas fa-running"></i> Adapted sports guides</li>
+                        <li><i class="fas fa-heartbeat"></i> Fitness tutorials</li>
+                        <li><i class="fas fa-gamepad"></i> Interactive exercise games</li>
+                        <li><i class="fas fa-dumbbell"></i> Workout plans</li>
+                    </ul>
+                    <button class="btn">Access Resources</button>
+                </div>
+
+                <!-- Environmental Science Resources -->
+                <div class="resource-card">
+                    <i class="fas fa-seedling"></i>
+                    <h3>Environmental Science Resources</h3>
+                    <ul class="resource-list">
+                        <li><i class="fas fa-leaf"></i> Nature study guides</li>
+                        <li><i class="fas fa-recycle"></i> Sustainability tutorials</li>
+                        <li><i class="fas fa-tree"></i> Ecosystem resources</li>
+                        <li><i class="fas fa-globe-americas"></i> Climate change materials</li>
+                    </ul>
+                    <button class="btn">Access Resources</button>
+                </div>
+
+                <!-- Critical Thinking Resources -->
+                <div class="resource-card">
+                    <i class="fas fa-brain"></i>
+                    <h3>Critical Thinking Resources</h3>
+                    <ul class="resource-list">
+                        <li><i class="fas fa-puzzle-piece"></i> Logic puzzle collections</li>
+                        <li><i class="fas fa-lightbulb"></i> Creative thinking exercises</li>
+                        <li><i class="fas fa-chart-bar"></i> Analysis tools</li>
+                        <li><i class="fas fa-question-circle"></i> Problem-solving guides</li>
+                    </ul>
+                    <button class="btn">Access Resources</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dashboard Section -->
+        <section id="dashboard" class="section">
+            <h2>Learning Dashboard</h2>
+            <div class="dashboard-container">
+                <div class="progress-card">
+                    <h3>Your Progress</h3>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 75%"></div>
+                    </div>
+                    <p>75% Complete</p>
+                    <div class="achievement-badges">
+                        <span class="badge"><i class="fas fa-star"></i> Basic Signs</span>
+                        <span class="badge"><i class="fas fa-star"></i> Numbers</span>
+                        <span class="badge"><i class="fas fa-star"></i> Alphabet</span>
+                    </div>
+                </div>
+                <div class="stats-card">
+                    <h3>Statistics</h3>
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <i class="fas fa-book"></i>
+                            <p>Lessons Completed: 15</p>
+                        </div>
+                        <div class="stat-item">
+                            <i class="fas fa-trophy"></i>
+                            <p>Quizzes Passed: 8</p>
+                        </div>
+                        <div class="stat-item">
+                            <i class="fas fa-clock"></i>
+                            <p>Study Time: 25h</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 SILENT LEARNERS. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 
